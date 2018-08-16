@@ -1,7 +1,7 @@
 <?php
     define("DATA_KEY", "udata_dgdgdf3434545dfgth54dsgdsf");
     define("SALT", "6547546151456554165654654656546546");
-    define("WAIT_TIME", 10);
+    define("WAIT_TIME", 15);
     define('ROOT_PATH', __DIR__);
     
     define('DB_HOST','127.0.0.1');

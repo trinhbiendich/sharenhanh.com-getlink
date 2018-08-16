@@ -24,7 +24,7 @@ include "xu-ly-getlink.php";
     <div class="container-fluid bg-3 text-center">
         <div class="row custom-row <?=$rightText . 'a'?>">
             <div class="col-lg-12" id="error">
-                Trang sẽ tự chuyển hướng sau <span val="<?=$key?>" id="countdown">10</span> giây.
+                Trang sẽ tự chuyển hướng sau <span id="countdown"><?=WAIT_TIME?></span> giây.
                 <a target="_blank" id="btn-click" href="#" class="btn btn-success hidden">Nhấn vào đây nếu trang không tự chuyển hướng >> </a>
                 <?php
                     if(empty($msg)){
@@ -40,45 +40,10 @@ include "xu-ly-getlink.php";
             </div>
         </div>
         <div class="row">
-            <div class="col-sm-3">
-                <p>
-                    <a href="https://irontrade.go2affise.com/click?pid=75&amp;offer_id=2"><img src="https://sharenhanh.com/wp-content/uploads/2018/07/sharenhanh-quangcaodao-irontrade-12hg.jpeg" class="img-responsive"></a>
-                </p>
-            </div>
-            <div class="col-sm-3">
-                <p>
-                    <a href="https://irontrade.go2affise.com/click?pid=75&amp;offer_id=2"><img src="https://sharenhanh.com/wp-content/uploads/2018/07/sharenhanh-quangcaodao-irontrade-12hg.jpeg" class="img-responsive"></a>
-                </p>
-            </div>
-            <div class="col-sm-3">
-                <p>
-                    <a href="https://irontrade.go2affise.com/click?pid=75&amp;offer_id=2"><img src="https://sharenhanh.com/wp-content/uploads/2018/07/sharenhanh-quangcaodao-irontrade-12hg.jpeg" class="img-responsive"></a>
-                </p>
-            </div>
-            <div class="col-sm-3">
-                <p>
-                    <a href="https://irontrade.go2affise.com/click?pid=75&amp;offer_id=2"><img src="https://sharenhanh.com/wp-content/uploads/2018/07/sharenhanh-quangcaodao-irontrade-12hg.jpeg" class="img-responsive"></a>
-                </p>
-            </div>
-            <div class="col-sm-3">
-                <p>
-                    <a href="https://irontrade.go2affise.com/click?pid=75&amp;offer_id=2"><img src="https://sharenhanh.com/wp-content/uploads/2018/07/sharenhanh-quangcaodao-irontrade-12hg.jpeg" class="img-responsive"></a>
-                </p>
-            </div>
-            <div class="col-sm-3">
-                <p>
-                    <a href="https://irontrade.go2affise.com/click?pid=75&amp;offer_id=2"><img src="https://sharenhanh.com/wp-content/uploads/2018/07/sharenhanh-quangcaodao-irontrade-12hg.jpeg" class="img-responsive"></a>
-                </p>
-            </div>
-            <div class="col-sm-3">
-                <p>
-                    <a href="https://irontrade.go2affise.com/click?pid=75&amp;offer_id=2"><img src="https://sharenhanh.com/wp-content/uploads/2018/07/sharenhanh-quangcaodao-irontrade-12hg.jpeg" class="img-responsive"></a>
-                </p>
-            </div>
-            <div class="col-sm-3">
-                <p>
-                    <a href="https://irontrade.go2affise.com/click?pid=75&amp;offer_id=2"><img src="https://sharenhanh.com/wp-content/uploads/2018/07/sharenhanh-quangcaodao-irontrade-12hg.jpeg" class="img-responsive"></a>
-                </p>
+            <div class="col-lg-12">
+                <?php
+                    include "quang-cao.php";
+                ?>
             </div>
         </div>
     </div>
@@ -86,56 +51,18 @@ include "xu-ly-getlink.php";
     <!-- Script -->
     <script type='text/javascript'>
 
-var count = 10;
-var myInterval;
+var count = <?=WAIT_TIME?>;
+
+var _0x7161=[];var myInterval
+
 var msg = {
     error : "Đường dẫn không hợp lệ hoặc không tồn tại, Vui lòng kiểm tra lại"
 };
-// Active
-window.addEventListener('focus', startTimer);
 
-// Inactive
-window.addEventListener('blur', stopTimer);
-
-function datax(data){
-    $("#btn-click").attr("href", data);
-    
-    if(data != "" && data.startsWith("http")){
-        $("#btn-click").removeClass("hidden");
-        window.location.href=data;
-    }else{
-        $("#error").html(msg.error);
-        $("#error").removeClass("hidden");
-    }
-}
-
-function timerHandler() {
-    count--;
-    document.getElementById("countdown").innerHTML = count;
-    if(count < 1){
-        window.clearInterval(myInterval);
-        callme();
-        $("#countdownx").hide();
-    }
-}
-
-
-
-startTimer();
-// Start timer
-function startTimer() {
-    if(count > 1){
-        myInterval = window.setInterval(timerHandler, 1000);
-    }
-}
-
-// Stop timer
-function stopTimer() {
-    window.clearInterval(myInterval);
-}
+var _0xf80e=["\x66\x6F\x63\x75\x73","\x61\x64\x64\x45\x76\x65\x6E\x74\x4C\x69\x73\x74\x65\x6E\x65\x72","\x62\x6C\x75\x72","\x68\x72\x65\x66","\x61\x74\x74\x72","\x23\x62\x74\x6E\x2D\x63\x6C\x69\x63\x6B","","\x68\x74\x74\x70","\x73\x74\x61\x72\x74\x73\x57\x69\x74\x68","\x68\x69\x64\x64\x65\x6E","\x72\x65\x6D\x6F\x76\x65\x43\x6C\x61\x73\x73","\x6C\x6F\x63\x61\x74\x69\x6F\x6E","\x65\x72\x72\x6F\x72","\x68\x74\x6D\x6C","\x23\x65\x72\x72\x6F\x72","\x69\x6E\x6E\x65\x72\x48\x54\x4D\x4C","\x63\x6F\x75\x6E\x74\x64\x6F\x77\x6E","\x67\x65\x74\x45\x6C\x65\x6D\x65\x6E\x74\x42\x79\x49\x64","\x63\x6C\x65\x61\x72\x49\x6E\x74\x65\x72\x76\x61\x6C","\x68\x69\x64\x65","\x23\x63\x6F\x75\x6E\x74\x64\x6F\x77\x6E\x78","\x73\x65\x74\x49\x6E\x74\x65\x72\x76\x61\x6C"];window[_0xf80e[1]](_0xf80e[0],startTimer);window[_0xf80e[1]](_0xf80e[2],stopTimer);function datax(_0x71d6x2){$(_0xf80e[5])[_0xf80e[4]](_0xf80e[3],_0x71d6x2);if(_0x71d6x2!= _0xf80e[6]&& _0x71d6x2[_0xf80e[8]](_0xf80e[7])){$(_0xf80e[5])[_0xf80e[10]](_0xf80e[9]);window[_0xf80e[11]][_0xf80e[3]]= _0x71d6x2}else {$(_0xf80e[14])[_0xf80e[13]](msg[_0xf80e[12]]);$(_0xf80e[14])[_0xf80e[10]](_0xf80e[9])}}function timerHandler(){count--;document[_0xf80e[17]](_0xf80e[16])[_0xf80e[15]]= count;if(count< 1){window[_0xf80e[18]](myInterval);callme();$(_0xf80e[20])[_0xf80e[19]]()}}startTimer();function startTimer(){if(count> 1){myInterval= window[_0xf80e[21]](timerHandler,1000)}}function stopTimer(){window[_0xf80e[18]](myInterval)}
 
 function callme(){
-    $.post('validation', {'<?=$strRandKey?>' : $("#countdown").attr("val")}, datax);
+    $.post('validation', {'<?=$strRandKey?>' : '<?=$key?>'}, datax);
 }
     </script>
 </body>
