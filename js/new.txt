@@ -1,0 +1,49 @@
+var count = 0;
+var myInterval;
+var msg = {
+    error : "Đường dẫn không hợp lệ hoặc không tồn tại, Vui lòng kiểm tra lại"
+};
+// Active
+window.addEventListener('focus', startTimer);
+
+// Inactive
+window.addEventListener('blur', stopTimer);
+
+function datax(data){
+    $("#btn-click").attr("href", data);
+    
+    if(data != "" && data.startsWith("http")){
+        $("#btn-click").removeClass("hidden");
+        window.location.href=data;
+    }else{
+        $("#error").html(msg.error);
+        $("#error").removeClass("hidden");
+    }
+}
+
+function timerHandler() {
+    count++;
+    document.getElementById("countdown").innerHTML = count;
+    if(count > 10){
+        window.clearInterval(myInterval);
+        callme();
+        $("#countdownx").hide();
+    }
+}
+
+
+
+startTimer();
+// Start timer
+function startTimer() {
+    myInterval = window.setInterval(timerHandler, 1000);
+}
+
+// Stop timer
+function stopTimer() {
+    window.clearInterval(myInterval);
+}
+
+function callme(){
+    $.post('checklink', {'<?=$strRandKey?>' : $("#countdown").attr("val")}, datax);
+}
